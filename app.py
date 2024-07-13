@@ -11,6 +11,10 @@ app.config['SECRET_KEY'] = "oh-so-secret"
 
 connect_db(app)
 
+@app.route('/')
+def home_page():
+    return render_template('home_page.html')
+
 @app.route('/api/cupcakes')
 def list_cupcakes():
     all_cupcakes = [cupcake.serialize() for cupcake in Cupcake.query.all()]

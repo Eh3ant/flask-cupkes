@@ -29,3 +29,7 @@ class Cupcake(db.Model):
             'rating':self.rating,
             'image':self.image,
     }
+
+    def __repr__(self):
+        c= self
+        return f'<Cupcake {c.id} flavor={c.flavor} size={c.size} rating={c.rating} image={c.image}>'
